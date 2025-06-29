@@ -16,15 +16,17 @@ The original PoC code from my initial research was good to just demonstrate the 
 
 ## Usage
 ```
-Usage: fragtunnel.py -p port -t target ip:port -T tunnel endpoint ip:port -b bind ip:port -e secret -v verbose
+Usage: fragtunnel.py -p port -t target ip:port -T tunnel endpoint ip:port -b bind ip:port -e secret --enc-type aes
 
--h --help        help
--p --port        port to listen for a local app to connect
--t --target      target's ip:port
--T --Tunnel to   tunnel server's ip:port
--b --bind        tunnel server listen ip:port
--e --encrypt     encrypt/encode tunnel traffic using the secret provided with this flag
--v --verbose     verbose mode
+-h --help        		help
+-p --port        		port to listen for a local app to connect
+-t --target      		target's ip:port
+-T --Tunnel to   		tunnel server's ip:port
+-b --bind        		tunnel server listen ip:port
+-e --encrypt     		encrypt/encode tunnel traffic using the secret provided with this flag
+--enc-type {xor,aes}  		Encryption type to use (default: xor)
+-v --verbose     		verbose mode
+-w WORKERS, --workers WORKERS	Max concurrent connections (default: 50)
 ```
 
 ### Set up a tunnel server:
